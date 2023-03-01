@@ -6,6 +6,28 @@ import { getUser } from '../_lib/user';
 import { useRouter } from 'next/router';
 import { LINK_SIGN_IN, ALLOWED_PAGES } from '../_consts/Links';
 import { Backdrop } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Header from '../components/common/Header';
+import Container from '@mui/material/Container';
+
+const theme = createTheme({
+  typography: {
+    h3: {
+      fontFamily: ['Noto Serif KR', 'serif'].join(','),
+    },
+  },
+  palette: {
+    primary: {
+      main: '#3AC184',
+      light: '#3ac18426',
+      dark: '#003809',
+    },
+    secondary: {
+      main: '#BDDB79',
+    },
+  },
+});
 
 const PageHead = () => (
   <Head>
@@ -39,8 +61,14 @@ export default function App({
 
   return (
     <>
-      <PageHead />
-      <FilteredComponent />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <PageHead />
+        <Container maxWidth='lg' sx={{ height: 'maxContent' }}>
+          <Header />
+          <FilteredComponent />
+        </Container>
+      </ThemeProvider>
     </>
   );
 }
