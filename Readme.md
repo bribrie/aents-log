@@ -68,3 +68,12 @@ docker-compose up -d
 ### 비고
 
 - Macbook M1에서 작성하였습니다.
+
+### Preview
+1. Dashboard
+![dashboard](https://user-images.githubusercontent.com/75575789/222302208-9e469355-a87a-419e-81e1-7211f8b190a6.png)
+
+2. Blog
+![blog](https://user-images.githubusercontent.com/75575789/222302907-2ed10a37-be29-4b33-b550-f7c0fc7f8ecf.png)
+
+
