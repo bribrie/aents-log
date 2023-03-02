@@ -16,7 +16,7 @@ export const request_delete_post = async (
   _id: string
 ): Promise<deletePostResponse> => {
   const response = await axios
-    .delete(`_f/post/delete?id=${_id}`)
+    .delete(`/_f/post/delete?_id=${_id}`)
     .then(() => ({ success: true }))
     .catch(({ response }) => {
       switch (response.status) {

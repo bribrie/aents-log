@@ -15,12 +15,20 @@ def 포스트_목록 (category:str):
     result = list(get_post_col().find({"category": category}).sort("created_at", 1))
   # result = list(get_post_col().find({"category": category}).sort({"created_at": 1}).skip(1).limit(1))
   
-  if len(result) == 0:
+  return {  
+      "result": result,
+  }
+  
+@router.get(path="/find",tags=[SwaggerTag.POST])
+def 포스트 (_id:str):
+  result = get_post_col().find_one({"_id": _id})
+
+  if result == None:
     raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail="존재하는 데이터가 없습니다.",
         )
-
+  
   return {  
       "result": result,
   }
@@ -49,16 +57,16 @@ def 포스트_추가(postData: AddPostModel):
 
 # 삭제 후엔 성공 메세지 전달
 @router.delete("/delete", response_description="Delete a post", tags=[SwaggerTag.POST])
-def 포스트_삭제(id: str):
-  
-  findData = get_post_col().find_one({"_id": id})
-  if not findData:
+def 포스트_삭제 (_id: str):
+  result = get_post_col().find_one({"_id": _id})
+
+  if result == None:
     raise HTTPException(
       status_code=status.HTTP_409_CONFLICT,
       detail="존재하지 않는 데이터입니다."
     )
   
-  get_post_col().find_one_and_delete({"_id": id})
+  get_post_col().find_one_and_delete({"_id": _id})
   
   return {
     "success": True
