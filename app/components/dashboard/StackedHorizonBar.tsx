@@ -10,7 +10,7 @@ interface StackedBarProps {
 
 const StackedHorizonBar = ({ datas, labels, title }: StackedBarProps) => {
   const regex = /[^0-9]/g;
-  const index = title.replace(regex, '');
+  const index = Number(title.replace(regex, ''));
   const data = {
     labels,
     datasets: [

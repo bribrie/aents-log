@@ -67,7 +67,7 @@ const Dashboard = () => {
         <select>
           <option value=''>하위조직 선택</option>
           {SUB_EMISSION_DATA.map((el) => (
-            <option>{el.name}</option>
+            <option key={el.name}>{el.name}</option>
           ))}
         </select>
       </Box>
