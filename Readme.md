@@ -70,10 +70,11 @@ docker-compose up -d
 - Macbook M1에서 작성하였습니다.
 
 ### Preview
-1. Dashboard
-![dashboard](https://user-images.githubusercontent.com/75575789/222302208-9e469355-a87a-419e-81e1-7211f8b190a6.png)
+- Dashboard
 
-2. Blog
+![dashboard](https://user-images.githubusercontent.com/75575789/222303311-9cd074d8-a14c-4db8-8c34-5b5ae7063d6a.png)
+
+- Blog
 ![blog](https://user-images.githubusercontent.com/75575789/222302907-2ed10a37-be29-4b33-b550-f7c0fc7f8ecf.png)
 
 
